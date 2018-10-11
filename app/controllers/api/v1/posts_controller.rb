@@ -2,8 +2,8 @@ module Api
   module V1
     class PostsController < ApplicationController
       def index
-        p = Post.create(title: "hello")
-        render json: p
+        @posts = Post.all
+        render json: @posts
         # binding.pry
       end
 
@@ -12,6 +12,9 @@ module Api
 
       def destroy
       end
+
+      def create
+      end 
 
       private
       def set_article
