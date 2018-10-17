@@ -6,4 +6,6 @@ namespace :api do
   resources :users
     end
   end
+  post '/signin', to: 'api/v1/auth#create'
+  get '/users/me', to: 'api/v1/users#me'
 end
