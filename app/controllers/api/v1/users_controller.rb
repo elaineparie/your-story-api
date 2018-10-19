@@ -23,6 +23,8 @@ module Api
       end
 
       def me
+        binding.pry
+        @user = current_user
         if @user
         render json: { user: @user, posts: @user.posts }
         else
