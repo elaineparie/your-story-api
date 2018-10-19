@@ -2,7 +2,7 @@ module Api
   module V1
     class ApplicationController < ActionController::API
       include ActionController::MimeResponds
-      before_action :authorized, except: [:welcome]
+      # before_action :authorized, except: [:welcome]
 
       def encode_token(payload)
         token = JWT.encode(payload, "flobble")
@@ -39,13 +39,13 @@ module Api
         !!current_user
       end
 
-      def authorized
-        redirect_to "/welcome" unless logged_in?
-      end
-
-      def welcome
-        render json: {message: "Please log in"}
-      end
+      # def authorized
+      #   redirect_to "/welcome" unless logged_in?
+      # end
+      #
+      # def welcome
+      #   render json: {message: "Please log in"}
+      # end
 
     end
   end

@@ -13,8 +13,9 @@ module Api
       end
 
       def create
-        @post = Post.create(title: params[:title], body: params[:body])
-        render json: @post 
+        # binding.pry
+        @post = Post.create(title: params[:title], body: params[:body], user_id: current_user.id)
+        render json: @post
       end
 
       private
