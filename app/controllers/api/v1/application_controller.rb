@@ -39,13 +39,13 @@ module Api
         !!current_user
       end
 
-      # def authorized
-      #   redirect_to "/welcome" unless logged_in?
-      # end
-      #
-      # def welcome
-      #   render json: {message: "Please log in"}
-      # end
+      def authorized
+        redirect_to "/welcome" unless logged_in?
+      end
+
+      def welcome
+        render json: {message: "Please log in"}
+      end
 
     end
   end

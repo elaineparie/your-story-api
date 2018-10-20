@@ -2,11 +2,14 @@ module Api
   module V1
     class PostsController < ApplicationController
       def index
-        @posts = Post.all
+        @user = current_user
+        @posts = @user.posts
         render json: @posts
       end
 
       def show
+        @post = Post.find(params["id"])
+        render json: @post
       end
 
       def destroy
@@ -16,6 +19,12 @@ module Api
         # binding.pry
         @post = Post.create(title: params[:title], body: params[:body], user_id: current_user.id)
         render json: @post
+      end
+
+      def user
+        @user = current_user
+        @posts = @user.posts
+        render json: @posts
       end
 
       private
