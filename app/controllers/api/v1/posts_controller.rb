@@ -13,6 +13,8 @@ module Api
       end
 
       def destroy
+        @post = Post.find(params["id"])
+        @post.destroy
       end
 
       def create
