@@ -21,11 +21,7 @@ module Api
         render json: @post
       end
 
-      def user
-        @user = current_user
-        @posts = @user.posts
-        render json: @posts
-      end
+
 
       private
       def set_article
