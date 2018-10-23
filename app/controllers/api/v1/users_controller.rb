@@ -22,20 +22,6 @@ module Api
       def destroy
       end
 
-      def me
-        binding.pry
-        @user = current_user
-        if @user
-        render json: { user: @user, posts: @user.posts }
-        else
-        render json: { message: "error" }
-        end
-      end
-
-      private
-      def set_user
-      end
-
     end
   end
 end

@@ -23,15 +23,6 @@ module Api
         render json: @post
       end
 
-
-
-      private
-      def set_article
-      end
-
-      def post_params
-      end
-
     end
   end
 end
