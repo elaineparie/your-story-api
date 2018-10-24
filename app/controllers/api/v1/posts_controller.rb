@@ -23,6 +23,13 @@ module Api
         render json: @post
       end
 
+      def likes
+        @post = Post.find(params["post"]["id"])
+        @post.likes = params["likes"] + 1
+        @post.save
+        render json: @post
+      end
+
     end
   end
 end

@@ -8,4 +8,5 @@ namespace :api do
   end
   post '/signin', to: 'api/v1/auth#create'
   get '/welcome', to: 'api/v1/application#welcome'
+  post '/likes', to: 'api/v1/posts#likes'
 end
