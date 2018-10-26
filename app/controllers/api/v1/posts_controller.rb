@@ -2,8 +2,12 @@ module Api
   module V1
     class PostsController < ApplicationController
       def index
+        if current_user
         @user = current_user
         @posts = @user.posts
+      else
+        @posts = Post.all
+      end
         render json: @posts
       end
 
